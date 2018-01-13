@@ -8,8 +8,8 @@ services:
     # args:
     # http_proxy: 'http://bloody_corporate_proxy:3128'
     # https_proxy: 'https://bloody_corporate_proxy:3128'
-  expose :
-   - 80
+  ports:
+   - "127.0.0.1:80:80"
   links :
    - postgis-db
  postgis-db:
