@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+ istsos:
+  build : ./istsos
+  expose :
+   - 80
+  links :
+   - postgis-db
+ postgis-db:
+  image : mdillon/postgis:9.6-alpine
+  expose : 
+   - 5432
+  environment:
+   - POSTGRES_USER=pdm
+   - POSTGRES_PASSWORD=pdm
+   - POSTGRES_DB=istsos
+   - PGDATA=/tmp
