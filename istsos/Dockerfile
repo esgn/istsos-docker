@@ -2,18 +2,13 @@ FROM alpine:3.4
 
 ENV APACHE_LOG_DIR /var/log/apache2
 
-# ensure www-data user exists
-RUN set -x \
-	&& addgroup -g 82 -S www-data \
-	&& adduser -u 82 -D -S -G www-data www-data
-
 # Install dependencies
 RUN (apk update && apk add apache2 apache2-mod-wsgi py-psycopg2 py-dateutil)
 
 # Extract istsos
 COPY files/istsos-2.3.1.tar.gz /tmp
 RUN (tar -zxvf /tmp/istsos-2.3.1.tar.gz -C /usr/local/)
-RUN (chmod 755 -R /usr/local/istsos && chown -R www-data:www-data /usr/local/istsos/services && chown -R www-data:www-data /usr/local/istsos/logs)
+RUN (chmod 755 -R /usr/local/istsos && chown -R apache:apache /usr/local/istsos/services && chown -R apache:apache /usr/local/istsos/logs)
 
 # Replace apache default conf
 RUN (mkdir /etc/apache2/vhost.d && echo "IncludeOptional /etc/apache2/vhost.d/*.conf" >> /etc/apache2/httpd.conf)
