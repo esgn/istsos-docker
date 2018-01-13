@@ -2,7 +2,12 @@ version: '3'
 
 services:
  istsos:
-  build : ./istsos
+  build :
+   context: ./istsos
+   # If docker runs behind proxy
+    # args:
+    # http_proxy: 'http://bloody_corporate_proxy:3128'
+    # https_proxy: 'https://bloody_corporate_proxy:3128'
   expose :
    - 80
   links :

@@ -1,9 +1,5 @@
 FROM alpine:3.4
 
-# Proxy if necessary 
-#ENV http_proxy 'http://my_bloody_corporate_proxy:3128'
-#ENV https_proxy 'http://my_bloody_corporate_proxy:3128'
-
 ENV APACHE_LOG_DIR /var/log/apache2
 
 # ensure www-data user exists
