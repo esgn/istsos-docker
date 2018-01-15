@@ -1,6 +1,6 @@
 # istsos-docker
 
-A Docker image for istsos.
+A Docker image for istsos (http://istsos.org/)
 Tried and make it as light as possible.
 
 ## Build and run
@@ -27,10 +27,13 @@ Edit `docker-compose.yml` for setting your corporate proxy information. Uncommen
 
 ## Create ISTsos demo service
 
-    $ cd istsos-docker
+Populate the ISTsos instance with new service and offerings
+
+    $ cd istsos-docker/tutorial
     $ python fill/execute.py
    
 ## Insert sample data in demo service
+
 Log into the istsos container by creating a new instance of the container's shell.
 
     # docker exec -ti istsos_container_id /bin/sh
