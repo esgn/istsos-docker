@@ -1,8 +1,10 @@
 # istsos-docker
 
 A Docker image for istSOS (http://istsos.org/)
-Tried and make it as light as possible.
+
 Based on istSOS 2.3.1 and istSOS official tutorial data.
+
+Tried and make it as light as possible.
 
 ## Build and run
 
