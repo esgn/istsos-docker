@@ -38,4 +38,5 @@ Log into the istsos container by creating a new instance of the container's shel
 
     $ docker exec -ti istsos_container_id /bin/sh
     # cd /usr/local/istsos
-    # python scripts/csv2istsos.py -p BELLINZONA LOCARNO P_LUGANO T_LUGANO GRABOW RH_GNOSCA -u http://localhost/istsos -s demo -w /tmp/dataset/exit
+    # python scripts/csv2istsos.py -p BELLINZONA LOCARNO P_LUGANO T_LUGANO GRABOW RH_GNOSCA -u http://localhost/istsos -s demo -w /tmp/dataset
+    # exit
