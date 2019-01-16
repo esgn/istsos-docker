@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 import requests
 import json
+import os
+
+# just in case
+os.environ['NO_PROXY'] = 'localhost'
+
 
 def rest_request(url, json_data):
 
