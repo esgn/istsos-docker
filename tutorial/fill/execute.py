@@ -4,6 +4,10 @@ import json
 import procedure
 import virtual
 import os
+
+# just in case
+os.environ['NO_PROXY'] = 'localhost'
+
 service_url = "http://localhost/istsos/"
 
 service = {
@@ -12,10 +16,10 @@ service = {
 
 url = service_url + "wa/istsos/services"
 
-print " Create new service"
+# print " Create new service"
 # create service
-r = requests.post(url, data=json.dumps(service))
-print r.text
+# r = requests.post(url, data=json.dumps(service))
+# print r.text
 
 procedure.insert_procedure(service_url, service['service'])
 virtual.insert_virtual(service_url, service['service'])
