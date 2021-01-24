@@ -4,7 +4,7 @@ ENV APACHE_LOG_DIR /var/log/apache2
 ARG ISTSOS_VERSION=2.3.3
 
 # Install dependencies
-RUN (apk update && apk add apache2 apache2-mod-wsgi py-psycopg2 py-dateutil)
+RUN (apk update && apk add apache2 apache2-mod-wsgi py-psycopg2 py-dateutil py-pip)
 
 # Extract istsos
 COPY files/istsos-$ISTSOS_VERSION.tar.gz /tmp
@@ -14,6 +14,9 @@ RUN (chmod 755 -R /usr/local/istsos && chown -R apache:apache /usr/local/istsos/
 # Copy test datasets
 COPY files/dataset /tmp/dataset
 COPY files/tutorial /tmp/tutorial
+
+# Import requests
+RUN pip install requests
 
 # Replace apache default conf
 RUN (mkdir /etc/apache2/vhost.d && echo "IncludeOptional /etc/apache2/vhost.d/*.conf" >> /etc/apache2/httpd.conf)
