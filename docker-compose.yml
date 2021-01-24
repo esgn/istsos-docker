@@ -1,23 +1,26 @@
 version: '3'
 
 services:
- istsos:
-  build :
-   context: ./istsos
-   # If docker runs behind proxy
-    # args:
-    # http_proxy: 'http://bloody_proxy_IP:3128'
-    # https_proxy: 'http://bloody_proxy_IP:3128'
-  ports:
-   - "127.0.0.1:80:80"
-  links :
-   - postgis-db
- postgis-db:
-  image : mdillon/postgis:9.6-alpine
-  expose : 
-   - 5432
-  environment:
-   - POSTGRES_USER=pdm
-   - POSTGRES_PASSWORD=pdm
-   - POSTGRES_DB=istsos
-   - PGDATA=/tmp
+
+  istsos:
+    container_name: istsos-2.3.3
+    build :
+      context: ./istsos
+      # If docker runs behind proxy
+      # args:
+        # http_proxy: 'http://bloody_proxy_IP:3128'
+        # https_proxy: 'http://bloody_proxy_IP:3128'
+    ports:
+      - "127.0.0.1:80:80"
+
+  istsos-db:
+    container_name: istsos-2.3.3-db
+    image : mdillon/postgis:9.6-alpine
+    expose :
+     - 5432
+    environment:
+     - POSTGRES_USER=pdm
+     - POSTGRES_PASSWORD=pdm
+     - POSTGRES_DB=istsos
+     - PGDATA=/tmp
+
