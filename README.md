@@ -12,7 +12,7 @@ Clone and build the repository:
 
     $ git clone https://github.com/psychicLocust/istsos-docker.git
     $ cd istsos-docker
-    $ docker compose-up
+    $ docker-compose up -d
     
 istSOS admin interface will be available at http://localhost/istsos/admin. 
 Register database with the following information:
