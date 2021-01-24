@@ -2,7 +2,7 @@
 
 A Docker image for istSOS (http://istsos.org/)
 
-Based on istSOS 2.4.0-RC and istSOS official tutorial data.
+Based on istSOS 2.4.0-RC4 and istSOS official tutorial data.
 
 Tried and make it as light as possible. For demo/teaching purposes. Database content not persisted.
 
