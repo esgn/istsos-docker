@@ -1,0 +1,29 @@
+# -*- coding: utf-8 -*-
+import requests
+import json
+import procedure
+import virtual
+import os
+service_url = "http://127.0.0.1:8080/istsos/"
+
+service = {
+	"service": "maxidemo"
+}
+
+url = service_url + "wa/istsos/services"
+
+print(" Create new service")
+# create service
+r = requests.post(url, data=json.dumps(service))
+print(r.text)
+
+procedure.insert_procedure(service_url, service['service'])
+virtual.insert_virtual(service_url, service['service'])
+
+# missing
+# load data to db
+
+# cp FAO56 script to virtual folder
+#os.system("sudo cp ../vp/")
+
+print(" Terminated :)")
