@@ -32,6 +32,10 @@ Edit `docker-compose.yml` for setting your corporate proxy information. Uncommen
 
 ## Create ISTsos demo service
 
+Follow the istSOS tutorial for [creating a new service instance](http://istsos.org/en/latest/doc/ws_instances.html#creating-a-new-service-instance). Use the name "demo" as stated in the tutorial.
+
+## Create ISTsos demo procedures
+
 Log into the istSOS container by creating a new instance of the container's shell.
 ```
     $ docker exec -ti istsos-2.3.3 /bin/sh
@@ -39,12 +43,12 @@ Log into the istSOS container by creating a new instance of the container's shel
     / # python fill/execute.py
     / # exit
 ```
-## Insert sample data in demo service
+## Insert sample data in demo procedures
 
 Log into the istSOS container by creating a new instance of the container's shell.
 ```
     $ docker exec -ti istsos-2.3.3 /bin/sh
     / # cd /usr/local/istsos
-    / # python scripts/csv2istsos.py -p BELLINZONA LOCARNO P_LUGANO T_LUGANO GRABOW RH_GNOSCA -u http://localhost/istsos -s demo -w /tmp/dataset
+    / # python scripts/csv2istsos.py -p BELLINZONA LOCARNO P_LUGANO T_LUGANO RH_GNOSCA -u http://localhost/istsos -s demo -w /tmp/dataset
     / # exit
 ```
