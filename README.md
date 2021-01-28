@@ -32,7 +32,7 @@ Edit `docker-compose.yml` for setting your corporate proxy information. Uncommen
 
 ## Create ISTsos demo service
 
-Follow the istSOS tutorial for [creating a new service instance](http://istsos.org/en/latest/doc/ws_instances.html#creating-a-new-service-instance). Use the name "demo" as stated in the tutorial.
+Follow the istSOS tutorial for [creating a new service instance](http://istsos.org/en/latest/doc/ws_instances.html#creating-a-new-service-instance). Use the name "demo" as stated in the tutorial. If you need the GRABOW procedure create it manually as stated in the istSOS tutorial.
 
 ## Create ISTsos demo procedures
 
@@ -52,3 +52,4 @@ Log into the istSOS container by creating a new instance of the container's shel
     / # python scripts/csv2istsos.py -p BELLINZONA LOCARNO P_LUGANO T_LUGANO RH_GNOSCA -u http://localhost/istsos -s demo -w /tmp/dataset
     / # exit
 ```
+You can add GRABOW to the command line if you've created it.
