@@ -10,7 +10,7 @@ Tried and make it as light as possible. For demo/teaching purposes. Database con
 
 Clone and build the repository:
 ```
-    $ git clone https://github.com/psychicLocust/istsos-docker.git
+    $ git clone https://github.com/esgn/istsos-docker.git
     $ cd istsos-docker
     $ git checkout 2.3.3
     $ docker-compose up -d
